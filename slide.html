@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Web</title>
+	<link rel="stylesheet" href="slide.css">
+	<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="hero">
+	<div class="navbar">
+		<div class="user">
+		<img src="images/me.png" class="logo">
+		<h3>Pramesh</h3>
+	</div>
+		<div class="user">
+			<button type="button">Explore</button>
+		</div>
+
+	</div>
+<div class="container">
+	<div class="info">
+		<h1>NEPAL</h1>
+		<p>Nepal (English: /nɪˈpɔːl/; Nepali: नेपाल [neˈpal]), officially the Federal Democratic Republic of Nepal, is a sovereign country in South Asia. It is mainly in the Himalayas, but also includes parts of the Indo-Gangetic Plain. It is the 49th largest country by population and 93rd largest country by area. It is landlocked, and borders China in the north and India in the south, east and west, while Bangladesh is located within only 27 km (17 mi) of its southeastern tip and Bhutan is separated from it by the Indian state of Sikkim.</p>
+		<input type="text" placeholder="Search">
+	</div>
+
+</div>
+
+<div class="slider">
+	<img src="images/left-arrow.png" id="prev">
+	<div class="preview">
+		<img src="images/image6.jpg" class=" active thumbnail">
+		<img src="images/image2.jpg" class="thumbnail">
+		<img src="images/images3.jpeg" class="thumbnail">
+		<img src="images/images4.jpg" class="thumbnail">
+		<img src="images/image1.jpg" class="thumbnail">
+	</div>
+	<img src="images/right-arrow.png" id="next">
+</div>
+
+
+
+</div>
+
+<script>
+	
+ 	var prev=document.getElementById("prev");
+ 	var next=document.getElementById("next");
+ 	var thumbnail=document.getElementsByClassName("thumbnail");
+ 	var hero=document.getElementById("hero");
+
+
+ 	var backgroundImg=[
+ 		"images/image6.jpg",
+ 		"images/image2.jpg",
+ 		"images/images3.jpeg",
+ 		"images/images4.jpg",
+ 		"images/image1.jpg"
+ 		];
+ 		
+let i=0;
+
+next.onclick = function(){
+	if(i<4){
+		hero.style.backgroundImage='url("'+backgroundImg[i+1]+ '")';
+		thumbnail[i+1].classList.add("active");
+		thumbnail[i].classList.remove("active");
+	i++;
+}
+}
+
+prev.onclick = function(){
+	if(i>0){
+		hero.style.backgroundImage='url("'+backgroundImg[i-1]+ '")';
+		thumbnail[i-1].classList.add("active");
+		thumbnail[i].classList.remove("active");
+	i--;
+}
+}
+
+
+
+</script>
+</body>
+</html>
